@@ -1,16 +1,23 @@
 # Quantitative Equity Analysis Tool
 
-A financial modeling engine built in Python to evaluate the risk-adjusted returns of large-cap tech stocks against the S&P 500 benchmark. This tool automates the retrieval of financial data, calculates key performance metrics, and quantifies volatility to aid in investment decision-making.
+A financial modeling engine built in Python to evaluate the risk-adjusted returns of large-cap tech stocks against the S&P 500 benchmark. This tool automates the retrieval of financial data, calculates key performance metrics, and visualizes the results through a comprehensive 3-panel dashboard.
 
 ## 📌 Overview
 
-This project focuses on quantitative investment analysis by leveraging the **Yahoo Finance API** for historical price data and the **Federal Reserve Economic Data (FRED)** for risk-free rates. The core objective is to calculate the **Sharpe Ratio**, allowing for a direct comparison between individual stock performance (e.g., AAPL) and a market benchmark (S&P 500).
+This project focuses on quantitative investment analysis by leveraging the **Yahoo Finance API** for historical price data and the **Federal Reserve Economic Data (FRED)** for risk-free rates. The core objective is to calculate the **Sharpe Ratio** and visualize the risk/reward profile, allowing for a direct comparison between individual stock performance (e.g., AAPL) and a market benchmark (S&P 500).
+
+![Dashboard Screenshot](path/to/your_screenshot.png)
+*(Optional: Replace this link with a screenshot of your Matplotlib dashboard)*
 
 ## 🚀 Key Features
 
 * **Automated Data Pipeline:** Fetches monthly historical closing prices for user-defined tickers and benchmarks (default: AAPL vs. S&P 500).
 * **Dynamic Risk-Free Rate:** Integrates the 3-Month Treasury Constant Maturity Rate (`TB3MS`) directly from FRED to calculate accurate excess returns.
 * **Robust Data Alignment:** Uses date buffering and forward-filling (`ffill`) to ensure seamless alignment between monthly stock returns and economic data reporting dates.
+* **Performance Dashboard:** A matplotlib-based visualization suite that displays:
+    * **Cumulative Returns:** Tracks the growth of a hypothetical $1 investment over the analysis period.
+    * **Risk vs. Return Scatter:** Visualizes the trade-off between Annualized Volatility and Return.
+    * **Sharpe Ratio Comparison:** A bar chart ranking assets by their risk-adjusted efficiency.
 * **Performance Metrics:** Calculates and prints:
     * Average Monthly & Annualized Returns (Logarithmic)
     * Monthly & Annualized Volatility (Standard Deviation using Square Root of Time rule)
@@ -21,6 +28,7 @@ This project focuses on quantitative investment analysis by leveraging the **Yah
 * **Python 3.x**
 * **Pandas:** For time-series manipulation and data alignment (`reindex`, `DateOffset`).
 * **NumPy:** For mathematical operations (log returns, square roots).
+* **Matplotlib & Seaborn:** For plotting cumulative growth curves, scatter plots, and comparative bar charts.
 * **yfinance:** For retrieving stock market data.
 * **pandas_datareader:** For retrieving economic data (FRED).
 
@@ -35,10 +43,12 @@ This project focuses on quantitative investment analysis by leveraging the **Yah
     * $Volatility_{ann} = Volatility_{monthly} \times \sqrt{12}$
 5.  **Sharpe Ratio:**
     $$\text{Sharpe Ratio} = \frac{R_p - R_f}{\sigma_p}$$
+6.  **Visualization:** Generates a unified figure combining growth trends and risk metrics.
 
 ## 💻 Usage
 
 ### Prerequisites
 Ensure you have the required libraries installed:
+
 ```bash
-pip install pandas numpy yfinance pandas_datareader
+pip install pandas numpy yfinance pandas_datareader matplotlib seaborn
