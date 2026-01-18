@@ -6,9 +6,6 @@ A financial modeling engine built in Python to evaluate the risk-adjusted return
 
 This project focuses on quantitative investment analysis by leveraging the **Yahoo Finance API** for historical price data and the **Federal Reserve Economic Data (FRED)** for risk-free rates. The core objective is to calculate the **Sharpe Ratio** and visualize the risk/reward profile, allowing for a direct comparison between individual stock performance (e.g., AAPL) and a market benchmark (S&P 500).
 
-![Dashboard Screenshot](path/to/your_screenshot.png)
-*(Optional: Replace this link with a screenshot of your Matplotlib dashboard)*
-
 ## 🚀 Key Features
 
 * **Automated Data Pipeline:** Fetches monthly historical closing prices for user-defined tickers and benchmarks (default: AAPL vs. S&P 500).
