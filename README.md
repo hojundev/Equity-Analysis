@@ -4,11 +4,11 @@ A financial modeling engine built in Python to evaluate the risk-adjusted return
 
 ## 📌 Overview
 
-This project focuses on quantitative investment analysis by leveraging the **Yahoo Finance API** for historical price data and the **Federal Reserve Economic Data (FRED)** for risk-free rates. The core objective is to calculate the **Sharpe Ratio** and visualize the risk/reward profile, allowing for a direct comparison between individual stock performance (e.g., AAPL) and a market benchmark (S&P 500).
+This project focuses on quantitative investment analysis by leveraging the **Yahoo Finance** for historical price data and the **Federal Reserve Economic Data (FRED)** for risk-free rates. The core objective is to calculate the **Sharpe Ratio** and visualize the risk/reward profile, allowing for a direct comparison between equities of user's choice.
 
 ## 🚀 Key Features
 
-* **Automated Data Pipeline:** Fetches monthly historical closing prices for user-defined tickers and benchmarks (default: AAPL vs. S&P 500).
+* **Automated Data Pipeline:** Fetches monthly historical closing prices for user-defined tickers and benchmarks.
 * **Dynamic Risk-Free Rate:** Integrates the 3-Month Treasury Constant Maturity Rate (`TB3MS`) directly from FRED to calculate accurate excess returns.
 * **Robust Data Alignment:** Uses date buffering and forward-filling (`ffill`) to ensure seamless alignment between monthly stock returns and economic data reporting dates.
 * **Performance Dashboard:** A matplotlib-based visualization suite that displays:
@@ -22,7 +22,7 @@ This project focuses on quantitative investment analysis by leveraging the **Yah
 
 ## 🛠️ Technologies Used
 
-* **Python 3.x**
+* **Python 3.12**
 * **Pandas:** For time-series manipulation and data alignment (`reindex`, `DateOffset`).
 * **NumPy:** For mathematical operations (log returns, square roots).
 * **Matplotlib & Seaborn:** For plotting cumulative growth curves, scatter plots, and comparative bar charts.
@@ -36,7 +36,7 @@ This project focuses on quantitative investment analysis by leveraging the **Yah
     $$r_t = \ln(\frac{P_t}{P_{t-1}})$$
 3.  **Risk-Free Adjustment:** Fetches `TB3MS` data from FRED, aligns it to the stock data timeline, and calculates excess returns.
 4.  **Annualization:** Converts monthly metrics to annualized figures:
-    * $Return_{ann} = Return_{monthly} \times 12$
+    * $Return_{ann} = (1 + Return_{monthly})^{12} - 1$
     * $Volatility_{ann} = Volatility_{monthly} \times \sqrt{12}$
 5.  **Sharpe Ratio:**
     $$\text{Sharpe Ratio} = \frac{R_p - R_f}{\sigma_p}$$
