@@ -49,3 +49,7 @@ Ensure you have the required libraries installed:
 
 ```bash
 pip install pandas numpy yfinance pandas_datareader matplotlib seaborn
+```
+
+## Sample Output
+<img width="1400" height="1000" alt="image" src="https://github.com/user-attachments/assets/ede45e16-adaf-452f-bdef-d9a5a810db7c" />
