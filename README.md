@@ -1,6 +1,6 @@
 # Quantitative Equity Analysis Tool
 
-A financial modeling engine built in Python to evaluate the risk-adjusted returns of large-cap tech stocks against the S&P 500 benchmark. This tool automates the retrieval of financial data, calculates key performance metrics, and visualizes the results through a comprehensive 3-panel dashboard.
+A financial modeling engine built in Python to evaluate the risk-adjusted returns of financial equities. This tool automates the retrieval of financial data, calculates key performance metrics, and visualizes the results through a comprehensive 3-panel dashboard.
 
 ## 📌 Overview
 
